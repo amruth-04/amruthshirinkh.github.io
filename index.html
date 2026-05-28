@@ -177,9 +177,7 @@
     text-decoration: none;
     transition: transform 0.3s ease;
   }
-  .scroll-down a:hover {
-    transform: translateY(6px);
-  }
+  .scroll-down a:hover { transform: translateY(6px); }
   .scroll-text {
     font-size: 11px;
     letter-spacing: 3px;
@@ -188,9 +186,7 @@
     font-family: 'JetBrains Mono', monospace;
     opacity: 0.8;
   }
-  .scroll-chevron {
-    animation: chevronBounce 2s ease-in-out infinite;
-  }
+  .scroll-chevron { animation: chevronBounce 2s ease-in-out infinite; }
   @keyframes chevronBounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(8px); }
@@ -230,23 +226,14 @@
     gap: 16px;
     margin-bottom: 60px;
   }
-  .section-num {
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 2px;
-  }
+  .section-num { font-size: 11px; color: var(--accent); letter-spacing: 2px; }
   .section-title {
     font-family: 'Syne', sans-serif;
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 800;
     letter-spacing: -1px;
   }
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    margin-left: 16px;
-  }
+  .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 16px; }
 
   /* ABOUT */
   #about { background: var(--surface); }
@@ -263,6 +250,32 @@
   .contact-list .label { color: var(--accent); min-width: 80px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
   .contact-list a { color: var(--text); text-decoration: none; font-size: 13px; }
   .contact-list a:hover { color: var(--accent); }
+
+  /* Experience card */
+  .exp-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    background: var(--bg);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    margin-bottom: 20px;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent3);
+  }
+  .exp-card:hover { border-color: rgba(255,107,107,0.3); }
+  .exp-card .company { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .exp-card .role { color: var(--accent3); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+  .exp-card .period { color: var(--muted); font-size: 11px; margin-top: 4px; }
+  .exp-card .exp-bullets { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .exp-card .exp-bullets li { display: flex; gap: 10px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+  .exp-card .exp-bullets li::before { content: '→'; color: var(--accent3); flex-shrink: 0; }
 
   .edu-list { display: flex; flex-direction: column; gap: 20px; }
   .edu-card {
@@ -356,14 +369,18 @@
   .project-card:hover::before { opacity: 1; }
 
   .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; gap: 16px; }
-  .project-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
   .project-sub { color: var(--accent); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+
+  .project-header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
   .project-num { font-size: 48px; font-weight: 800; color: var(--border); font-family: 'Syne', sans-serif; line-height: 1; }
+  .project-link {
+    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    border: 1px solid var(--border); padding: 5px 12px; border-radius: 2px;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .project-link:hover { color: var(--accent); border-color: rgba(0,229,255,0.4); }
 
   .project-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
   .project-bullets li {
@@ -400,16 +417,12 @@
   }
   .cert-card:hover { border-color: rgba(127,255,127,0.3); transform: translateY(-2px); }
   .cert-icon {
-    width: 44px;
-    height: 44px;
+    width: 44px; height: 44px;
     background: rgba(127,255,127,0.08);
     border: 1px solid rgba(127,255,127,0.2);
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
   }
   .cert-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 4px; }
   .cert-issuer { color: var(--accent2); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
@@ -435,8 +448,7 @@
 
   /* FOOTER */
   footer {
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
     text-align: center;
     padding: 60px 48px;
     border-top: 1px solid var(--border);
@@ -459,40 +471,7 @@
     #hero { padding: 100px 24px 60px; }
     .section-wrap { padding: 70px 24px; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
-    .scroll-down {
-    margin-top: 64px;
-    display: flex;
-    justify-content: center;
-    animation: fadeUp 0.6s 0.5s ease both;
-  }
-  .scroll-down a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
-  .scroll-down a:hover {
-    transform: translateY(6px);
-  }
-  .scroll-text {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    opacity: 0.8;
-  }
-  .scroll-chevron {
-    animation: chevronBounce 2s ease-in-out infinite;
-  }
-  @keyframes chevronBounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-  }
-
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
     .project-card { padding: 28px 20px; }
   }
 </style>
@@ -524,13 +503,11 @@
       <span class="line2">Shirin K H</span>
     </h1>
     <p class="hero-desc">
-      Engineering graduate building scalable data pipelines, ML systems, and backend infrastructure. Obsessed with performance, precision, and clean data architecture.
+      Software engineer with internship experience at Bosch Automotive. Builds backend systems, data pipelines, embedded software, and ML-powered applications — obsessed with performance and clean architecture.
     </p>
-
     <div class="hero-ctas">
       <a href="mailto:amruthshirin@gmail.com" class="btn btn-ghost">Get in Touch</a>
     </div>
-
     <div class="scroll-down">
       <a href="#about" aria-label="Scroll down">
         <span class="scroll-text">Scroll Down</span>
@@ -539,11 +516,10 @@
         </svg>
       </a>
     </div>
-
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ── 01 ABOUT ── -->
 <section id="about">
   <div class="section-wrap">
     <div class="section-header">
@@ -552,10 +528,11 @@
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
+
       <div class="about-text">
-        <p>I'm a <span>data engineering & backend systems</span> enthusiast from Bengaluru, India. With a strong foundation in Python, SQL, and distributed data processing, I design and build systems that actually perform at scale.</p>
-        <p>My work spans from building <span>ETL pipelines with Apache Spark</span> and orchestrating workflows with Airflow, to fine-tuning LLMs and building full-stack platforms. I care about the details — low latency, high throughput, clean schemas.</p>
-        <p>Currently exploring opportunities where I can contribute to data-intensive, high-impact engineering teams.</p>
+        <p>I'm a <span>software engineer</span> from Bengaluru, India with hands-on experience in Python, C/C++, backend development, and embedded systems. My foundation spans Operating Systems, Data Structures, Computer Networks, and Linux internals.</p>
+        <p>I recently completed a <span>Software Engineering Internship at Bosch Automotive Electronics India</span>, working on embedded C/C++ modules for automotive control systems — focusing on real-time performance, device driver concepts, and kernel interactions on production-grade hardware.</p>
+        <p>Beyond embedded work, I build <span>data pipelines with Apache Spark</span>, fine-tune LLMs, and design full-stack platforms. I care about the details — low latency, high throughput, clean schemas.</p>
         <ul class="contact-list">
           <li><span class="label">Mobile</span> <a href="tel:8904471414">+91 8904471414</a></li>
           <li><span class="label">Email</span> <a href="mailto:amruthshirin@gmail.com">amruthshirin@gmail.com</a></li>
@@ -563,28 +540,45 @@
           <li><span class="label">Location</span> <span>Bengaluru, Karnataka</span></li>
         </ul>
       </div>
-      <div class="edu-list">
-        <div class="edu-card">
-          <div class="inst">Bangalore Institute of Technology</div>
-          <div class="degree">B.E — Electronics & Communication</div>
-          <div class="detail">Bengaluru, Karnataka</div>
+
+      <div>
+        <!-- Bosch Internship -->
+        <div class="exp-card">
+          <div class="company">Bosch Automotive Electronics India Pvt Ltd</div>
+          <div class="role">Software Engineering Intern</div>
+          <div class="period">Nov 2025 – Feb 2026</div>
+          <ul class="exp-bullets">
+            <li>Developed and debugged embedded C/C++ modules for automotive control systems, focusing on real-time performance and timing accuracy.</li>
+            <li>Assisted in design and optimization of software components to improve code efficiency, modularity, and reusability across multiple subsystems.</li>
+            <li>Gained hands-on exposure to device driver concepts, kernel interactions, and embedded system architecture on production-grade automotive hardware.</li>
+          </ul>
         </div>
-        <div class="edu-card">
-          <div class="inst">Jain College, VV Puram</div>
-          <div class="degree">XII — Pre-University</div>
-          <div class="detail">Bengaluru, Karnataka</div>
-        </div>
-        <div class="edu-card">
-          <div class="inst">The Oxford Senior Secondary School</div>
-          <div class="degree">X — CBSE</div>
-          <div class="detail">Bengaluru, Karnataka</div>
+
+        <!-- Education -->
+        <div class="edu-list">
+          <div class="edu-card">
+            <div class="inst">Bangalore Institute of Technology</div>
+            <div class="degree">B.E — Electronics & Communication Engineering</div>
+            <div class="detail">2022 – 2026 · Bengaluru, Karnataka</div>
+          </div>
+          <div class="edu-card">
+            <div class="inst">Jain College, Basavanagudi</div>
+            <div class="degree">XII — Pre-University</div>
+            <div class="detail">2020 – 2022 · Bengaluru, Karnataka</div>
+          </div>
+          <div class="edu-card">
+            <div class="inst">The Oxford Senior Secondary School</div>
+            <div class="degree">X — CBSE</div>
+            <div class="detail">Bengaluru, Karnataka</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ── 02 SKILLS ── -->
 <section id="skills">
   <div class="section-wrap">
     <div class="section-header">
@@ -593,66 +587,105 @@
       <div class="section-line"></div>
     </div>
     <div class="skills-grid">
+
       <div class="skill-block">
         <div class="skill-block-title">Languages</div>
         <div class="skill-tags">
           <span class="tag">Python</span>
           <span class="tag">C</span>
+          <span class="tag">C++</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
           <span class="tag">Shell Scripting</span>
-          <span class="tag">Verilog</span>
         </div>
       </div>
+
       <div class="skill-block">
         <div class="skill-block-title">Web Development</div>
         <div class="skill-tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">TypeScript</span>
           <span class="tag">React.js</span>
           <span class="tag">Node.js</span>
+          <span class="tag">jQuery</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Socket.IO</span>
         </div>
       </div>
+
       <div class="skill-block">
         <div class="skill-block-title">Databases</div>
         <div class="skill-tags">
           <span class="tag">PostgreSQL</span>
           <span class="tag">MySQL</span>
           <span class="tag">MongoDB</span>
+          <span class="tag">Prisma ORM</span>
+          <span class="tag">Cloud Data Warehouses</span>
         </div>
       </div>
+
       <div class="skill-block">
-        <div class="skill-block-title">Tools & Cloud</div>
+        <div class="skill-block-title">Data Engineering</div>
         <div class="skill-tags">
-          <span class="tag">Git</span>
-          <span class="tag">Docker</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Linux</span>
-          <span class="tag">Postman</span>
-        </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Data & BI</div>
-        <div class="skill-tags">
-          <span class="tag">Power BI</span>
-          <span class="tag">Tableau</span>
           <span class="tag">Apache Spark</span>
           <span class="tag">Apache Airflow</span>
+          <span class="tag">Spark SQL</span>
+          <span class="tag">ETL Pipelines</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Tableau</span>
         </div>
       </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">AI / ML</div>
+        <div class="skill-tags">
+          <span class="tag">LLaMA-3 Fine-tuning</span>
+          <span class="tag">LoRA</span>
+          <span class="tag">QLoRA</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Reinforcement Learning</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">OS & DevOps</div>
+        <div class="skill-tags">
+          <span class="tag">Linux</span>
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Git</span>
+          <span class="tag">Postman</span>
+          <span class="tag">MATLAB</span>
+        </div>
+      </div>
+
       <div class="skill-block">
         <div class="skill-block-title">Embedded & Hardware</div>
         <div class="skill-tags">
           <span class="tag">RTOS</span>
+          <span class="tag">Embedded C</span>
           <span class="tag">UART / SPI / I2C</span>
           <span class="tag">FPGA</span>
           <span class="tag">VHDL</span>
           <span class="tag">JTAG</span>
+          <span class="tag">SoC</span>
         </div>
       </div>
+
+      <div class="skill-block">
+        <div class="skill-block-title">Testing & QA</div>
+        <div class="skill-tags">
+          <span class="tag">Debugging</span>
+          <span class="tag">System Validation</span>
+          <span class="tag">Test Case Development</span>
+          <span class="tag">Performance Testing</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- ── 03 PROJECTS ── -->
 <section id="projects">
   <div class="section-wrap">
     <div class="section-header">
@@ -666,24 +699,28 @@
       <div class="project-card">
         <div class="project-header">
           <div>
-            <div class="project-title">Civic Lens</div>
-            <div class="project-sub">Where My Tax Goes — Data Platform</div>
+            <div class="project-title">E2E Encrypted Messenger</div>
+            <div class="project-sub">Signal-Inspired Secure Communication System</div>
           </div>
-          <div class="project-num">01</div>
+          <div class="project-header-right">
+            <div class="project-num">01</div>
+            <a class="project-link" href="https://github.com/amruthshirin" target="_blank">GitHub ↗</a>
+          </div>
         </div>
         <ul class="project-bullets">
-          <li>Built scalable ETL pipelines using Python and Apache Spark to ingest, cleanse, and transform large-scale, multi-source datasets across batch and near real-time workflows.</li>
-          <li>Orchestrated automated data workflows using Apache Airflow with DAG-based scheduling for ingestion, transformation, and validation — ensuring fault-tolerant, production-grade pipeline reliability.</li>
-          <li>Optimized data processing and aggregation using Spark SQL, query tuning, and indexing, enabling high-performance analytics and low-latency data serving via RESTful APIs.</li>
-          <li>Modeled structured data in PostgreSQL and cloud data warehouses, designing analytics-ready schemas (star/snowflake) to support BI dashboards and data-driven decision-making.</li>
+          <li>Implemented Signal-inspired X3DH key exchange and Double Ratchet algorithms in Python for secure end-to-end encrypted communication.</li>
+          <li>Developed a real-time encrypted messaging application using Flask and Socket.IO with bidirectional WebSocket communication.</li>
+          <li>Applied forward secrecy and per-message key derivation to ensure compromised keys cannot decrypt past or future messages.</li>
+          <li>Integrated PyNaCl authenticated encryption for secure key management, message confidentiality, and integrity verification. Enabled cross-device encrypted messaging over a local network between desktop and mobile browsers.</li>
         </ul>
         <div class="metrics-row">
-          <span class="metric">Apache Spark</span>
-          <span class="metric">Apache Airflow</span>
-          <span class="metric">PostgreSQL</span>
-          <span class="metric">Spark SQL</span>
-          <span class="metric">Star Schema</span>
-          <span class="metric">REST APIs</span>
+          <span class="metric">Python</span>
+          <span class="metric">Flask</span>
+          <span class="metric">PyNaCl</span>
+          <span class="metric">Flask-SocketIO</span>
+          <span class="metric">X3DH</span>
+          <span class="metric">Double Ratchet</span>
+          <span class="metric">Forward Secrecy</span>
         </div>
       </div>
 
@@ -691,24 +728,84 @@
       <div class="project-card">
         <div class="project-header">
           <div>
+            <div class="project-title">PI-NAS</div>
+            <div class="project-sub">Raspberry Pi Network-Attached Storage</div>
+          </div>
+          <div class="project-header-right">
+            <div class="project-num">02</div>
+            <a class="project-link" href="https://github.com/amruthshirin" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+        <ul class="project-bullets">
+          <li>Designed and deployed a Raspberry Pi 5 ARM Cortex-A76 NAS supporting SMB and NFS file sharing and Plex media streaming — 18–20 MB/s throughput, sub-100 ms API latency, 8 W peak power.</li>
+          <li>Optimized Linux storage and I/O on ARM: 87% USB 3.0 bandwidth utilization, 2–4% idle CPU usage, and 150–480 MB RAM during sustained workloads.</li>
+          <li>Implemented data protection via soft-delete recovery and automated backup achieving 100% recovery across 200+ file operations, with 68% lower power vs. typical NAS systems.</li>
+          <li>Benchmarked 62°C peak temperature, 100% interrupt response under 50 µs, and stable operation over 250+ hours of continuous uptime.</li>
+        </ul>
+        <div class="metrics-row">
+          <span class="metric">Raspberry Pi 5</span>
+          <span class="metric">Linux / ARM</span>
+          <span class="metric">SMB / NFS</span>
+          <span class="metric">Plex Media Server</span>
+          <span class="metric">Shell Scripting</span>
+          <span class="metric">18–20 MB/s Throughput</span>
+          <span class="metric">68% Lower Power</span>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <div class="project-title">RTOS Scheduling Simulator</div>
+            <div class="project-sub">Real-Time OS Scheduler with Live Dashboard</div>
+          </div>
+          <div class="project-header-right">
+            <div class="project-num">03</div>
+            <a class="project-link" href="https://github.com/amruthshirin" target="_blank">GitHub ↗</a>
+          </div>
+        </div>
+        <ul class="project-bullets">
+          <li>Architected a real-time RTOS scheduling simulator implementing Round Robin, FCFS, SJF, and Priority Scheduling algorithms with dynamic ready queue management and concurrent task execution modeling.</li>
+          <li>Engineered an event-driven scheduler core simulating process state transitions, context switching, preemptive scheduling, mutex-based synchronization, and task lifecycle management.</li>
+          <li>Implemented asynchronous bidirectional communication using Flask-SocketIO and Eventlet for low-latency real-time sync between back-end scheduling events and front-end visualization.</li>
+          <li>Developed a live monitoring dashboard with dynamic Gantt chart rendering, CPU utilization analytics, context switch metrics, and scheduling timeline visualization.</li>
+        </ul>
+        <div class="metrics-row">
+          <span class="metric">Python</span>
+          <span class="metric">Eventlet</span>
+          <span class="metric">WebSockets</span>
+          <span class="metric">Multithreading</span>
+          <span class="metric">Round Robin / FCFS / SJF</span>
+          <span class="metric">Gantt Chart Dashboard</span>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
             <div class="project-title">Concept Quest</div>
             <div class="project-sub">Automated Question Paper Generation System (AQPGS)</div>
           </div>
-          <div class="project-num">02</div>
+          <div class="project-header-right">
+            <div class="project-num">04</div>
+            <a class="project-link" href="https://github.com/amruthshirin" target="_blank">GitHub ↗</a>
+          </div>
         </div>
         <ul class="project-bullets">
-          <li>Fine-tuned LLaMA-3 with LoRA/QLoRA on 1000+ questions, reducing training time from 180 to 45 minutes and achieving 150–200 questions/minute generation with inference latency under 150 ms.</li>
-          <li>Optimized ML pipeline on Google Colab GPUs with 72% GPU memory utilization and 85% tensor core efficiency.</li>
+          <li>Fine-tuned LLaMA-3 with LoRA/QLoRA on 500+ questions, reducing training time from 180 to 45 minutes and achieving 150–200 questions/minute generation with inference latency under 150 ms.</li>
+          <li>Optimized ML pipeline on Google Colab GPUs achieving 72% GPU memory utilization and 85% tensor core efficiency.</li>
           <li>Built full-stack exam platform using React, Node.js, and PostgreSQL with JWT authentication, role-based access, and API latency under 300 ms.</li>
-          <li>Implemented randomized question generation with semantic similarity filtering, achieving 94–97% alignment and preventing duplicate questions.</li>
-          <li>Optimized database queries and caching, reducing retrieval latency from 450 ms to under 100 ms — a 78% improvement — with 90% data integrity.</li>
+          <li>Implemented semantic similarity filtering achieving 94–97% relevance alignment and preventing duplicate questions across all generated sets.</li>
+          <li>Debugged and optimized database queries and caching strategies, reducing retrieval latency from 450 ms to under 100 ms — a 78% improvement — with 100% data integrity.</li>
         </ul>
         <div class="metrics-row">
           <span class="metric">LLaMA-3</span>
           <span class="metric">LoRA / QLoRA</span>
+          <span class="metric">PyTorch</span>
           <span class="metric">React + Node.js</span>
           <span class="metric">PostgreSQL</span>
-          <span class="metric">JWT Auth</span>
           <span class="metric">94–97% Alignment</span>
           <span class="metric">78% Latency Cut</span>
         </div>
@@ -718,7 +815,7 @@
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- CERTIFICATIONS (unchanged) -->
 <section id="certs">
   <div class="section-wrap">
     <div class="section-header">
@@ -755,7 +852,7 @@
   </div>
 </section>
 
-<!-- INVOLVEMENT -->
+<!-- INVOLVEMENT (unchanged) -->
 <section id="involvement">
   <div class="section-wrap">
     <div class="section-header">
@@ -794,8 +891,7 @@
 </footer>
 
 <script>
-  // Intersection Observer for scroll animations
-  const els = document.querySelectorAll('.skill-block, .project-card, .cert-card, .inv-card, .edu-card');
+  const els = document.querySelectorAll('.skill-block, .project-card, .cert-card, .inv-card, .edu-card, .exp-card');
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
